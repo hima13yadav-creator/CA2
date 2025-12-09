@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Himanshu</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- about.html: About Me (uses float for the profile image) -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">Himanshu</div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container about-page">
+    <h2>About Me</h2>
+
+    <!-- Float layout: profile image floats left and text wraps beside it -->
+    <img src="IMG-20250814-WA0045.jpg" alt="Profile photo" class="profile-float">
+
+    <p>
+      I am a motivated student with a strong interest in physics and computer science.
+      I enjoy solving problems, building small web projects, and learning new programming concepts.
+      In my free time I play chess, cook, and take care of my pet dog.
+      I am preparing for interviews and improving my coding and communication skills.
+    </p>
+
+    <p>
+      I build simple, clean UI using HTML and CSS, and I am learning JavaScript to make interactive apps.
+      This portfolio demonstrates my understanding of semantic HTML, layout techniques (float & flexbox),
+      and form handling basics.
+    </p>
+
+    <!-- a small signature block -->
+    <p class="signature">— Himanshu</p>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year-about"></span> Himanshu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year-about').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

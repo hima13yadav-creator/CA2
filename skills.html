@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skills & Projects — Himanshu</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- skills.html: Skill/project cards aligned using Flexbox -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">Himanshu</div>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Skills & Projects</h2>
+    <p>Below are a few of my strengths and sample mini-projects.</p>
+
+    <!-- Flexbox container for the cards (minimum 3 cards) -->
+    <section class="skills-grid" role="list">
+      <article class="skill-card" role="listitem" style="--card-bg:#f7d7d7;">
+        <h3>Web Design</h3>
+        <p>Clean semantic HTML and responsive CSS. Built small portfolio pages and responsive layouts.</p>
+      </article>
+
+      <article class="skill-card" role="listitem" style="--card-bg:#d7f7e8;">
+        <h3>IOT Basics</h3>
+        <p>Built a wall-avoiding car using Arduino and ESP modules. The project involved
+       integrating sensors, programming autonomous navigation, and experimenting
+       with IoT connectivity to control and monitor the car remotely</p>
+      </article>
+
+      <article class="skill-card" role="listitem" style="--card-bg:#d7e7f7;">
+        <h3>Data & Problem Solving</h3>
+        <p>Strong math/physics background. Familiar with algorithmic thinking and debugging problems.</p>
+      </article>
+
+      <!-- optional extra card -->
+      <article class="skill-card" role="listitem" style="--card-bg:#f7f0d7;">
+        <h3>Git & Collaboration</h3>
+        <p>Repository setup, commits, and basic branching. Prepared to host projects on GitHub.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year-skills"></span> Himanshu.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year-skills').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Himanshu — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- index.html: Home page -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">Himanshu</div>
+      <nav class="nav-menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Hello — I'm Himanshu</h1>
+      <p class="lead">A student & aspiring developer who loves physics, coding and building polished web projects.</p>
+      <p>Welcome to my personal portfolio. Explore my skills, projects, and use the contact form to get in touch.</p>
+      <a class="btn" href="about.html">Learn more about me</a>
+    </section>
+
+    <section class="preview-cards">
+      <!-- Three preview cards to demonstrate layout -->
+      <article class="card">
+        <h3>Projects</h3>
+        <p>Small web apps and experiments demonstrating HTML/CSS and JavaScript fundamentals.</p>
+      </article>
+
+      <article class="card">
+        <h3>Skills</h3>
+        <p>HTML, CSS (Flexbox & Grid), basic JavaScript, Git, and problem solving.</p>
+      </article>
+
+      <article class="card">
+        <h3>Contact</h3>
+        <p>Use the contact page to send a message or get my GitHub link.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year"></span> Himanshu. Portfolio for academic assignment.</p>
+  </footer>
+
+  <script>
+    // small script to set the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
