@@ -1,0 +1,195 @@
+/* styles.css - Shared styles for all pages
+   Demonstrates: semantic selectors, float usage (about page), flexbox usage (nav & skills),
+   responsive design basics, and comments as required.
+*/
+
+/* Root variables */
+:root{
+  --max-width: 1000px;
+  --accent: #2b6cb0;
+  --muted: #666;
+  --surface: #ffffff;
+  --bg: #f5f7fb;
+  --radius: 12px;
+  --gap: 1rem;
+  --card-border: 2px solid rgba(0,0,0,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Global reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Container centers content */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1.25rem;
+}
+
+/* Header & Nav - use flexbox */
+.site-header{
+  background:linear-gradient(90deg, rgba(255,255,255,0.8), rgba(240,247,255,0.6));
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  position:sticky;
+  top:0;
+  backdrop-filter: blur(4px);
+  z-index:100;
+}
+.nav-bar{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  justify-content:space-between;
+  padding:0.5rem 0;
+}
+.logo{
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--accent);
+}
+.nav-menu{
+  display:flex;
+  gap:0.75rem;
+  align-items:center;
+}
+.nav-menu a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:0.4rem 0.6rem;
+  border-radius:8px;
+  font-weight:600;
+}
+.nav-menu a:hover{ color:var(--accent); background:rgba(43,108,176,0.06)}
+.nav-menu a.active{ color:var(--accent); background:rgba(43,108,176,0.08)}
+
+/* Hero section */
+.hero{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:2rem;
+  margin:1rem 0;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.04);
+}
+.hero h1{margin:0 0 0.5rem 0}
+.lead{color:var(--muted); margin-bottom:1rem}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  text-decoration:none;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn:hover{ opacity:0.95 }
+
+/* Small card grid on homepage */
+.preview-cards{
+  display:flex;
+  gap:1rem;
+  margin-top:1rem;
+  flex-wrap:wrap;
+}
+.card{
+  flex:1 1 240px;
+  background:white;
+  padding:1rem;
+  border-radius:10px;
+  border:var(--card-border);
+  box-shadow:0 6px 14px rgba(17,24,39,0.03);
+}
+
+/* About page: float image */
+.profile-float{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  margin:0 1rem 1rem 0;
+  float:left; /* the required float usage */
+  border:3px solid rgba(43,108,176,0.08);
+  box-shadow:0 8px 18px rgba(17,24,39,0.05);
+}
+
+/* Clearfix for container areas that contain floats */
+.about-page::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* Skills page: use Flexbox for card layout */
+.skills-grid{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+}
+.skill-card{
+  flex:1 1 220px;
+  padding:1rem;
+  border-radius:10px;
+  border:2px solid rgba(0,0,0,0.06);
+  background:var(--surface);
+  min-width:220px;
+  box-shadow:0 6px 16px rgba(17,24,39,0.03);
+}
+
+/* Using CSS Custom property --card-bg to set card background colors inline */
+.skill-card{ background:var(--card-bg, #fff) }
+
+/* Contact form styling */
+.contact-form{
+  background:white;
+  padding:1rem;
+  border-radius:10px;
+  border:var(--card-border);
+  margin-top:1rem;
+  max-width:700px;
+}
+.contact-form label{
+  display:block;
+  margin-top:0.6rem;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:0.6rem;
+  margin-top:0.25rem;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.08);
+  font-size:1rem;
+}
+.contact-form textarea{ resize:vertical }
+
+/* Footer */
+.site-footer{
+  margin-top:2rem;
+  padding:1rem 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width:720px){
+  .nav-bar{ flex-direction:column; align-items:stretch; gap:0.5rem }
+  .preview-cards{ flex-direction:column }
+  .skill-card{ flex:1 1 100% }
+  .profile-float{ width:120px; height:120px; float:none; display:block; margin:0 auto 1rem auto; }
+}
